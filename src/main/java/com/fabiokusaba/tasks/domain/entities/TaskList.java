@@ -1,6 +1,7 @@
 package com.fabiokusaba.tasks.domain.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -8,6 +9,12 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "task_lists")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class TaskList {
 
     @Id
