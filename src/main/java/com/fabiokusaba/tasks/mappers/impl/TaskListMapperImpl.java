@@ -6,17 +6,19 @@ import com.fabiokusaba.tasks.domain.entities.TaskList;
 import com.fabiokusaba.tasks.domain.enums.TaskStatus;
 import com.fabiokusaba.tasks.mappers.TaskListMapper;
 import com.fabiokusaba.tasks.mappers.TaskMapper;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
 @Component
-@RequiredArgsConstructor
 public class TaskListMapperImpl implements TaskListMapper {
 
     private final TaskMapper taskMapper;
+
+    public TaskListMapperImpl(TaskMapper taskMapper) {
+        this.taskMapper = taskMapper;
+    }
 
     @Override
     public TaskList fromDto(TaskListDto taskListDto) {
